@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre el blog - Mi blog de tecnología</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        /* Mismos colores y tipografía que en index.html del blog */
+        :root {
+            --color-fondo: #f3f4f6;
+            --color-texto: #111827;
+            --color-primario: #2563eb;
+            --color-primario-hover: #1d4ed8;
+            --color-header: #111827;
+            --color-header-texto: #f9fafb;
+            --color-footer: #111827;
+            --color-footer-texto: #9ca3af;
+            --color-tarjeta: #ffffff;
+            --color-borde: #e5e7eb;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            margin: 0;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--color-primario);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: var(--color-primario-hover);
+            text-decoration: underline;
+        }
+
+        header,
+        main,
+        footer {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 1.5rem 1.25rem;
+        }
+
+        header {
+            background-color: var(--color-header);
+            color: var(--color-header-texto);
+            border-bottom: 1px solid #000;
+        }
+
+        .header-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        @media (min-width: 640px) {
+            .header-inner {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        h1 {
+            font-size: 1.9rem;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        nav a {
+            color: #e5e7eb;
+            padding: 0.35rem 0.9rem;
+            border-radius: 999px;
+            background: transparent;
+            border: 1px solid transparent;
+        }
+
+        nav a:hover {
+            background-color: rgba(249, 250, 251, 0.1);
+            border-color: rgba(249, 250, 251, 0.25);
+            text-decoration: none;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-top: 0.4rem;
+            margin-bottom: 0.4rem;
+            font-size: 1rem;
+        }
+
+        main {
+            padding-top: 2rem;
+            padding-bottom: 2.5rem;
+        }
+
+        section {
+            background-color: var(--color-tarjeta);
+            border-radius: 0.9rem;
+            border: 1px solid var(--color-borde);
+            padding: 1.25rem 1.4rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+        }
+
+        ul {
+            padding-left: 1.25rem;
+            margin-top: 0.4rem;
+            margin-bottom: 0.4rem;
+        }
+
+        li {
+            margin-bottom: 0.3rem;
+        }
+
+        footer {
+            background-color: var(--color-footer);
+            color: var(--color-footer-texto);
+            text-align: center;
+            padding: 1rem 1.25rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <h1>Mi blog de tecnología</h1>
+            <nav aria-label="Navegación principal">
+                <a href="index.html">Inicio</a>
+                <a href="about.html">Sobre el blog</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section aria-labelledby="about-blog">
+            <h2 id="about-blog">Sobre este blog</h2>
+            <p>
+                <strong>Mi blog de tecnología</strong> es un espacio personal donde registro lo que voy aprendiendo
+                sobre desarrollo web, programación y herramientas digitales. La idea es usar este sitio como ejercicio
+                práctico para la materia de HTML y, al mismo tiempo, como un lugar para reflexionar sobre mi propio
+                proceso de aprendizaje.
+            </p>
+            <p>
+                Los temas van desde conceptos muy básicos, como la estructura de una página en HTML, hasta ideas más
+                avanzadas relacionadas con la publicación de proyectos en la web y el uso de plataformas como GitHub
+                Pages.
+            </p>
+        </section>
+
+        <section aria-labelledby="about-me">
+            <h2 id="about-me">Sobre mí</h2>
+            <p>
+                Soy Ignacio, estudiante y entusiasta de la tecnología. Me interesa entender cómo funcionan las cosas
+                por dentro, especialmente en el mundo digital. A través de este blog, quiero practicar la escritura de
+                código y a la vez mejorar mi forma de explicar lo que aprendo.
+            </p>
+            <p>
+                Además de la programación, me gusta explorar nuevas herramientas, aprender de tutoriales y compartir
+                recursos con otras personas que también están empezando en este camino.
+            </p>
+        </section>
+
+        <section aria-labelledby="recent-experience">
+            <h2 id="recent-experience">Experiencia y logros recientes</h2>
+            <ul>
+                <li>Curso de introducción a HTML y CSS completado.</li>
+                <li>Primera página web publicada usando GitHub Pages.</li>
+                <li>Prácticas de programación básica con JavaScript.</li>
+                <li>Participación en proyectos académicos relacionados con tecnología y educación.</li>
+                <li>Creación de este blog como parte de la sección “HTML Project”.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mi blog de tecnología - Ignacio</p>
+    </footer>
+</body>
+</html>
