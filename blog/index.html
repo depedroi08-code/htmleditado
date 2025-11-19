@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi blog de tecnología - Ignacio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--
+        Estilos CSS del blog
+        - Tipografía base
+        - Colores de fondo, texto y links (con hover)
+        - Márgenes y paddings para separar secciones
+        - Estilos de encabezados y párrafos
+        - Barra de navegación
+        - Imágenes adaptativas
+        - Botones/links destacados con hover
+        - Footer con fondo y texto centrado
+    -->
+    <style>
+        /* Tipografía y colores base */
+        :root {
+            --color-fondo: #f3f4f6;
+            --color-texto: #111827;
+            --color-primario: #2563eb;
+            --color-primario-hover: #1d4ed8;
+            --color-header: #111827;
+            --color-header-texto: #f9fafb;
+            --color-footer: #111827;
+            --color-footer-texto: #9ca3af;
+            --color-tarjeta: #ffffff;
+            --color-borde: #e5e7eb;
+        }
+
+        html {
+            font-size: 16px; /* Tamaño base */
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            margin: 0;
+            background-color: var(--color-fondo); /* Fondo de página */
+            color: var(--color-texto);            /* Color de texto */
+            line-height: 1.6;
+        }
+
+        /* Links y su estado hover */
+        a {
+            color: var(--color-primario);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: var(--color-primario-hover);
+            text-decoration: underline;
+        }
+
+        /* Layout general */
+        header,
+        main,
+        footer {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 1.5rem 1.25rem;
+        }
+
+        /* Barra de navegación y encabezado */
+        header {
+            background-color: var(--color-header);
+            color: var(--color-header-texto);
+            border-bottom: 1px solid #000;
+        }
+
+        .header-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        @media (min-width: 640px) {
+            .header-inner {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        h1 {
+            font-size: 1.9rem;
+            margin: 0;
+        }
+
+        .intro {
+            margin: 0.35rem 0 0 0;
+            font-size: 1rem;
+            color: #e5e7eb;
+            max-width: 30rem;
+        }
+
+        /* Barra de navegación (alineación, color, espaciado) */
+        nav {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        nav a {
+            color: #e5e7eb;
+            padding: 0.35rem 0.9rem;
+            border-radius: 999px;
+            background: transparent;
+            border: 1px solid transparent;
+        }
+
+        nav a:hover {
+            background-color: rgba(249, 250, 251, 0.1);
+            border-color: rgba(249, 250, 251, 0.25);
+            text-decoration: none;
+        }
+
+        /* Encabezados y párrafos dentro del contenido */
+        h2 {
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 0.35rem;
+        }
+
+        p {
+            margin-top: 0.4rem;
+            margin-bottom: 0.4rem;
+            font-size: 1rem;
+        }
+
+        /* Separación entre secciones (márgenes + paddings) */
+        main {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .post {
+            background-color: var(--color-tarjeta);
+            border-radius: 0.9rem;
+            border: 1px solid var(--color-borde);
+            padding: 1.25rem 1.4rem;
+            margin-bottom: 1.75rem; /* separa cada post */
+            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+        }
+
+        .meta {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-bottom: 0.6rem;
+        }
+
+        /* Imágenes adaptativas */
+        .post img {
+            max-width: 100%;  /* tamaño máximo adaptativo */
+            height: auto;
+            border-radius: 0.6rem;
+            margin: 0.4rem 0 0.9rem 0;
+            display: block;
+        }
+
+        /* Botón / link destacado (por si lo necesitás en el futuro) */
+        .btn-destacado {
+            display: inline-block;
+            margin-top: 0.75rem;
+            padding: 0.55rem 1.1rem;
+            border-radius: 999px;
+            background-color: var(--color-primario);
+            color: #ffffff;
+            font-size: 0.95rem;
+            border: none;
+        }
+
+        .btn-destacado:hover {
+            background-color: var(--color-primario-hover);
+            text-decoration: none;
+        }
+
+        /* Footer con fondo y texto centrado */
+        footer {
+            background-color: var(--color-footer);
+            color: var(--color-footer-texto);
+            text-align: center;
+            padding: 1rem 1.25rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div>
+                <h1>Mi blog de tecnología</h1>
+                <p class="intro">
+                    Un espacio donde comparto lo que voy aprendiendo sobre desarrollo web, programación y herramientas digitales.
+                </p>
+            </div>
+
+            <nav aria-label="Navegación principal">
+                <a href="index.html">Inicio</a>
+                <a href="about.html">Sobre el blog</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Post 1 -->
+        <article class="post">
+            <h2>Por qué empecé a programar</h2>
+            <p class="meta">Autor: Ignacio &bull; Publicado el 10 de marzo de 2025</p>
+            <img src="https://via.placeholder.com/800x300" alt="Un teclado y una computadora portátil sobre un escritorio">
+            <p>
+                Siempre me gustó la tecnología, pero durante mucho tiempo la veía como algo lejano: usaba aplicaciones,
+                juegos y redes sociales sin entender qué pasaba por detrás. Todo cambió cuando descubrí que podía crear
+                mis propias páginas web con unas pocas líneas de código.
+            </p>
+            <p>
+                Empecé con ejemplos muy simples de HTML y CSS, y de a poco fui ganando confianza. Lo que más me sorprendió
+                fue la sensación de poder: escribir código, guardar el archivo y ver cómo el navegador mostraba algo
+                completamente nuevo. A partir de ahí, me propuse seguir aprendiendo un poco cada día.
+            </p>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="post">
+            <h2>Herramientas que uso para estudiar programación</h2>
+            <p class="meta">Autor: Ignacio &bull; Publicado el 18 de marzo de 2025</p>
+            <img src="https://via.placeholder.com/800x300" alt="Pantallas con código y material de estudio">
+            <p>
+                Una de las claves para aprender a programar es organizar bien las herramientas que usamos. En mi caso,
+                combino videos, cursos en línea, documentación oficial y, sobre todo, mucha práctica escribiendo código.
+            </p>
+            <p>
+                También me ayuda mucho usar un editor de texto cómodo, como Visual Studio Code, y tener un sistema de
+                control de versiones con Git y GitHub. Esto no solo me permite guardar mis proyectos, sino también ver
+                cómo van evolucionando con el tiempo.
+            </p>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="post">
+            <h2>Mi primera página en GitHub Pages</h2>
+            <p class="meta">Autor: Ignacio &bull; Publicado el 25 de marzo de 2025</p>
+            <img src="https://via.placeholder.com/800x300" alt="Captura de una página web sencilla en un navegador">
+            <p>
+                Publicar una página en GitHub Pages fue un paso importante, porque significó compartir mi trabajo con
+                otras personas. Al principio parecía complicado, pero en realidad se reduce a crear un repositorio,
+                subir los archivos y activar la opción de Pages.
+            </p>
+            <p>
+                Lo más interesante es que, a partir de ese momento, cualquier cambio que hago en mis archivos HTML se
+                puede ver en la web con solo actualizar el repositorio. Esto me motiva a seguir mejorando el diseño y
+                el contenido de mis proyectos.
+            </p>
+        </article>
+
+        <!-- Post 4 -->
+        <article class="post">
+            <h2>Consejos para no frustrarse aprendiendo a programar</h2>
+            <p class="meta">Autor: Ignacio &bull; Publicado el 2 de abril de 2025</p>
+            <img src="https://via.placeholder.com/800x300" alt="Persona tomando notas frente a una computadora">
+            <p>
+                Aprender a programar puede ser desafiante. Es normal encontrar errores, bugs y momentos donde nada
+                parece funcionar. Lo importante es entender que el error forma parte del proceso de aprendizaje.
+            </p>
+            <p>
+                Algunos consejos que me sirvieron son: dividir los problemas en partes más pequeñas, pedir ayuda cuando
+                me trabo, leer los mensajes de error con calma y, sobre todo, tener paciencia conmigo mismo. Cada línea
+                de código que escribo, incluso si falla, me acerca un poco más a la solución.
+            </p>
+        </article>
+
+        <!-- Post 5 -->
+        <article class="post">
+            <h2>Qué me gustaría aprender después de HTML y CSS</h2>
+            <p class="meta">Autor: Ignacio &bull; Publicado el 10 de abril de 2025</p>
+            <img src="https://via.placeholder.com/800x300" alt="Iconos de diferentes tecnologías de programación">
+            <p>
+                Después de aprender los fundamentos de HTML y CSS, el siguiente paso lógico es JavaScript, el lenguaje
+                que le da interactividad a las páginas web. Con JavaScript puedo hacer que los sitios respondan a las
+                acciones del usuario: botones, animaciones, formularios dinámicos y mucho más.
+            </p>
+            <p>
+                También me interesa explorar frameworks modernos como React o Vue, pero por ahora quiero consolidar
+                bien las bases. Prefiero ir paso a paso, entendiendo lo que hago, antes de agregar más capas de
+                complejidad.
+            </p>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mi blog de tecnología - Ignacio</p>
+    </footer>
+</body>
+</html>
